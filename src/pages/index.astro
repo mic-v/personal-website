@@ -1,24 +1,17 @@
 ---
 // Component Imports
 import Button from '../components/Button.astro';
-
+import MainLayout from '../layouts/MainLayout.astro';
+import Navigation from '../components/Navigation.astro';
+import Hero from '../components/Hero.astro';
 // Full Astro Component Syntax:
 // https://docs.astro.build/core-concepts/astro-components/
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro + TailwindCSS</title>
-	</head>
-
-	<body>
-		<div class="grid place-items-center h-screen content-center">
-			<Button>Tailwind Button in Astro!</Button>
-			<a href="/markdown-page" class="p-4 underline">Markdown is also supported...</a>
-		</div>
-	</body>
-</html>
+<MainLayout title="Testing">
+	<Navigation />
+	<Hero subtext="I am Michael Victorino. I am a web developer">
+		<p slot="hero-header">Hey there, <br> I'm Michael</p>
+		<p slot="hero-text">I am Michael Victorino. I like to program and interested in web development, game development, etc.</p>
+	</Hero>
+</MainLayout>

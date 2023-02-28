@@ -1,0 +1,24 @@
+@font-face {
+  font-family: 'Sentient';
+  font-style: normal;
+  font-weight: 400;
+  src: url('fonts/Sentient-Regular.otf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Sentient';
+  font-style: normal;
+  font-weight: 700;
+  src: url('fonts/Sentient-Bold.otf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Sentient';
+  font-style: normal;
+  font-weight: 500;
+  src: url('fonts/Sentient-Medium.otf') format('truetype');
+}
+
+body {
+  background-color: fbf5f3;
+}
