@@ -29,19 +29,22 @@ import { Icon } from 'astro-icon'
 <script>
 
 let menubutton = document.getElementById('mobile-menu');
-menubutton.addEventListener("click", enableMenu);
+if(menubutton) menubutton.addEventListener("click", enableMenu);
 
 function enableMenu() {
   let height = 'h-full';
   let navbar = document.getElementById('navbar');
   let menunav = document.getElementById('mobile-nav');
-  menunav.classList.toggle('hidden');
-  if(navbar.classList.contains('max-h-16')) {
-    navbar.classList.add('max-h-full');
-    navbar.classList.remove('max-h-16');
-  } else {
-    navbar.classList.remove('max-h-full');
-    navbar.classList.add('max-h-16');
+  if(menunav)
+    menunav.classList.toggle('hidden');
+  if(navbar) {
+    if(navbar.classList.contains('max-h-16')) {
+      navbar.classList.add('max-h-full');
+      navbar.classList.remove('max-h-16');
+    } else {
+      navbar.classList.remove('max-h-full');
+      navbar.classList.add('max-h-16');
+    }
   }
   /*
   if(menunav.classList.contains('invisible')) {
