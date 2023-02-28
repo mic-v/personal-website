@@ -4,6 +4,10 @@ import tailwind from '@astrojs/tailwind';
 
 // https://astro.build/config
 export default defineConfig({
-	integrations: [mdx(), tailwind()],
-	site: 'https://mic-v.github.io',
+	integrations: [
+		tailwind({
+			config: { applyBaseStyles: true },
+		}),
+		mdx(), ],
+	site: 'https://mic-v.github.io/',
 });
