@@ -3,13 +3,26 @@
 import MainLayout from '../layouts/MainLayout.astro';
 import Navigation from '../components/Navigation.astro';
 import Hero from '../components/Hero.astro';
+import PageSection from '../components/PageSection.astro';
+import FlexColList from '../components/FlexColList.astro';
+import SmallListCard from '../components/SmallListCard.astro';
 ---
 
-<MainLayout title="Testing">
+<MainLayout title="Home">
 	<Navigation />
 	<Hero subtext="I am Michael Victorino. I am a web developer">
 		<p slot="hero-header">Hey there, <br> I'm Michael</p>
 		<p slot="hero-text">I am Michael Victorino. I like to program and interested in web development, game development, etc.</p>
 	</Hero>
-	<section>Testing asdfasdf</section>
+	<PageSection title="About me" subtext="Hello there!">
+		<div slot="subtext">
+			<FlexColList class="bg-gray-800">
+				<li>
+					<SmallListCard icon="mdi:account-supervisor-circle-outline">
+						<div slot="text">Hello</div>
+					</SmallListCard>
+				</li>
+			</FlexColList>	
+		</div>
+	</PageSection>
 </MainLayout>

@@ -1,0 +1,21 @@
+---
+const { title, subtext, flexwrap = "md:flex-row-reverse" } = Astro.props;
+---
+<section class="relative">
+  <div class="container xl:w-[1500px] m-auto px-6 py-32 md:px-12 md:py-32">
+    <div class:list={['flex flex-col justify-evenly items-center gap-4 md:items-start', flexwrap]}>
+      <div class="w-full flex flex-col gap-8 items-center md:items-end">
+        <h1 class="font-bold text-center items-center md:text-start text-5xl lg:text-6xl uppercase">
+          { title }
+        </h1>
+        <slot name="subtext" class="text-2xl">
+          <p>Need to include subtext here!</p>
+        </slot>
+      </div>
+      <div class="flex flex-col gap-8">
+        <div class="aspect-[4/3] w-[400px] xl:w-[600px] bg-gray-200 rounded-sm shadow-lg transform transition-all ease-out hover:scale-[85%] hover:rotate-6"></div>
+        <div>button</div>
+      </div>
+    </div>
+  </div>
+</section>
