@@ -1,7 +1,9 @@
 ---
+import { AstroComponentInstance } from "astro/dist/runtime/server";
 
+const { classlist = "" } = Astro.props;
 ---
 
-<ul class="flex flex-col">
+<ul class:list={["flex flex-col", classlist]}>
   <slot />
 </ul>

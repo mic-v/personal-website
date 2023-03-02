@@ -4,16 +4,16 @@ import "../styles/global.css";
 import { Icon } from 'astro-icon'
 ---
 
-<nav id="navbar" class="fixed top-0 z-10 transition-all bg-white transform ease-in duration-200 w-full min-h-16 md:min-h-0 py-4 px-4">
+<nav id="navbar" class="fixed top-0 z-10 transition-all bg-white md:bg-transparent transform ease-in duration-200 w-full min-h-16 md:min-h-0 py-4 px-4">
   <div class="container mx-auto flex flex-col md:flex-row justify-between items-center">
-    <div class="w-full flex flex-row justify-between gap-4">
+    <div class="flex xl:w-full flex-row justify-between gap-4 shrink">
       <div class="font-[Sentient] text-4xl md:text-5xl"><strong>michael<span class="text-[#083d77]">v</span></strong></div>
       <div class="flex flex-row">
         <Icon name="mdi:weather-night" class="w-6 md:hidden"/>
         <Icon id="mobile-menu" name="mdi:menu" class="w-6 md:hidden cursor-pointer"/>
       </div>
     </div>
-    <ul id="mobile-nav" class="hidden flex md:opacity-100 md:flex flex-col gap-4 md:flex-row basis-1/2 font-regular items-startjustify-around uppercase">
+    <ul id="mobile-nav" class="hidden flex md:opacity-100 md:flex flex-col gap-4 md:flex-row lg:basis-1/2 lg:shrink font-regular items-start justify-around uppercase">
       <li><a href="" class="hover:text-[#083d77]">Home</a></li>
       <li><a href="" class="hover:text-[#083d77]">About</a></li>
       <li><a href="" class="hover:text-[#083d77]">Projects</a></li>

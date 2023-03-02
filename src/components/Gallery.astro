@@ -1,0 +1,19 @@
+---
+const { classlist = "" } = Astro.props;
+---
+
+<div class:list={["relative aspect-video w-full md:w-[500px] lg:w-[550px] xl:w-[750px] rounded-lg shadow-lg", classlist]}>
+  <button class="absolute top-48 left-0">
+    Left
+  </button>
+  <button class="absolute top-48 right-0">
+    Right
+  </button>
+  <div class="w-full h-6 bg-gray-100 rounded-t-lg"></div>
+  <ul class="flex aspect-video h-full w-full bg-gray-300 rounded-b-lg overflow-x-scroll">
+    <li class="w-full h-full grow-1 shrink-0 basis-full bg-green-700"></li>
+    <li class="w-full h-full grow-1 shrink-0 basis-full bg-yellow-700"></li>
+    <li class="w-full h-full grow-1 shrink-0 basis-full"></li>
+  </ul>
+  
+</div>

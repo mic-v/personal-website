@@ -6,6 +6,8 @@ import Hero from '../components/Hero.astro';
 import PageSection from '../components/PageSection.astro';
 import FlexColList from '../components/FlexColList.astro';
 import SmallListCard from '../components/SmallListCard.astro';
+import Button from '../components/Button.astro';
+import Gallery from '../components/Gallery.astro';
 ---
 
 <MainLayout title="Home">
@@ -14,15 +16,41 @@ import SmallListCard from '../components/SmallListCard.astro';
 		<p slot="hero-header">Hey there, <br> I'm Michael</p>
 		<p slot="hero-text">I am Michael Victorino. I like to program and interested in web development, game development, etc.</p>
 	</Hero>
-	<PageSection title="About me" subtext="Hello there!">
+	<PageSection title="About me" classlist="bg-grid" flexwrap="md:flex-row-reverse">
 		<div slot="subtext">
-			<FlexColList class="bg-gray-800">
+			<FlexColList classlist="gap-4">
 				<li>
 					<SmallListCard icon="mdi:account-supervisor-circle-outline">
-						<div slot="text">Hello</div>
+						<div slot="text">I'm Michael, currently based in Toronto, Canada</div>
+					</SmallListCard>
+				</li>
+				<li>
+					<SmallListCard icon="ic:round-history-edu" bgcolor="bg-red-600">
+						<div slot="text">Started programming in high school from web development and game development</div>
+					</SmallListCard>
+				</li>
+				<li>
+					<SmallListCard icon="ri:arrow-down-line" bgcolor="bg-green-600">
+						<div slot="text">Currently working on side projects such as this website and other web projects </div>
 					</SmallListCard>
 				</li>
 			</FlexColList>	
+		</div>
+		<div slot="otherside" class="flex flex-col gap-4 items-center">
+			<div class="aspect-[4/3] w-[400px] md:w-[350px] lg:w-[450px] xl:w-[550px] bg-gray-200 rounded-sm shadow-lg transform transition-all ease-out hover:scale-[85%] hover:rotate-2"></div>
+			<Button>Learn more about me</Button>
+		</div>
+	</PageSection>
+	<PageSection title="Projects">
+		<div slot="subtext">
+			<FlexColList classlist="items-center gap-4">
+				yo
+			</FlexColList>
+		</div>
+		<div slot="otherside" class="flex basis-1/2 items-stretch px-6">
+			<Gallery>
+
+			</Gallery>
 		</div>
 	</PageSection>
 </MainLayout>
