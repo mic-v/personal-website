@@ -9,5 +9,5 @@ export default defineConfig({
 			config: { applyBaseStyles: true },
 		}),
 		mdx(), ],
-	site: 'https://mic-v.github.io/',
+	site: 'https://www.michaelvictorino.dev/',
 });
