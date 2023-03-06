@@ -1,11 +1,11 @@
 ---
 const { title, flexwrap = "md:flex-row", classlist = ""} = Astro.props;
 ---
-<section class:list={["relative", classlist]}>
+<section class:list={["", classlist]}>
   <div class="container xl:w-[1500px] m-auto py-32 md:px-4 lg:px-10 md:py-32">
     <div class:list={['flex flex-col justify-between items-center gap-4 md:items-start', flexwrap]}>
       <div class:list={["w-full h-full flex flex-col gap-8 items-center", (flexwrap == "md:flex-row" ? "md:items-start" : "md:items-end")]}>
-        <h1 class="font-bold text-center items-center md:text-start text-5xl lg:text-6xl uppercase">
+        <h1 class="font-bold text-center items-center md:text-start text-5xl lg:text-6xl xl:text-7xl uppercase">
           { title }
         </h1>
         <slot name="subtext" class="text-2xl">

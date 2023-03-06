@@ -1,0 +1,14 @@
+---
+const { image, project, text } = Astro.props;
+---
+
+<li class:list={["relative flex h-full grow-1 shrink-0 basis-full bg-green-700 slide", image]}>
+  <div class="absolute bottom-0 flex flex-col gap-4">
+    <div class="px-2 bg-gray-800 bg-opacity-90 text-white">
+      {project}
+    </div>
+    <div class="px-2 bg-gray-800 bg-opacity-90 text-white">
+      <slot/>
+    </div>
+  </div>
+</li>

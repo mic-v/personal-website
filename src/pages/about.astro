@@ -1,0 +1,22 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import Navigation from "../components/Navigation.astro";
+import Footer from "../components/Footer.astro";
+import GridSection from "../components/GridSection.astro";
+import Hero from "../components/Hero.astro";
+import PageSection from "../components/PageSection.astro";
+---
+
+<MainLayout title="About">
+  <Navigation />
+  <GridSection>
+		<Hero>
+			<p slot="hero-header">About Me</p>
+			<p slot="hero-text"></p>
+		</Hero>
+  </GridSection>
+  <PageSection title="under construction"> 
+    Test
+  </PageSection>
+  <Footer />
+</MainLayout>

@@ -2,9 +2,20 @@
 // Comments
 import "../styles/global.css";
 import { Icon } from 'astro-icon'
+
+const { border = 'border-b'} = Astro.props;
+
+const navLinks: { label: string, href: string} [] = [
+  { label: 'Home', href:'/' },
+  { label: 'About', href:'about' },
+  { label: 'Projects', href:'/projects', },
+  { label: 'Blog', href:'/blog' },
+  { label: 'Contact', href:'/contact'},
+];
+
 ---
 
-<nav id="navbar" class="fixed top-0 z-10 transition-all bg-white md:bg-transparent transform ease-in duration-200 w-full min-h-16 md:min-h-0 py-4 px-4">
+<nav id="navbar" class="fixed top-0 z-50 transition-all border-b md:border-0 bg-white md:bg-transparent transform ease-in duration-200 w-full min-h-16 md:min-h-0 py-4 px-4">
   <div class="container mx-auto flex flex-col md:flex-row justify-between items-center">
     <div class="flex xl:w-full flex-row justify-between gap-4 shrink">
       <div class="font-[Sentient] text-4xl md:text-5xl"><strong>michael<span class="text-[#083d77]">v</span></strong></div>
@@ -14,11 +25,11 @@ import { Icon } from 'astro-icon'
       </div>
     </div>
     <ul id="mobile-nav" class="hidden flex md:opacity-100 md:flex flex-col gap-4 md:flex-row lg:basis-1/2 lg:shrink font-regular items-start justify-around uppercase">
-      <li><a href="" class="hover:text-[#083d77]">Home</a></li>
-      <li><a href="" class="hover:text-[#083d77]">About</a></li>
-      <li><a href="" class="hover:text-[#083d77]">Projects</a></li>
-      <li><a href="" class="hover:text-[#083d77]">Blog</a></li>
-      <li><a href="" class="hover:text-[#083d77]">Contact</a></li>
+      {
+        navLinks.map(({label, href }) => (
+        <li><a href={href} class="hover:text-blue-800">{label}</a></li>
+        ))
+      }
     </ul>
     <ul>
       <li><Icon name="mdi:weather-night" class="w-6 hidden md:block"/></li>
@@ -45,6 +56,30 @@ function enableMenu() {
     } else {
       navbar.classList.remove('min-h-48');
       navbar.classList.add('min-h-16');
+    }
+  }
+}
+
+window.onscroll = function (event) {
+  const scroll = window.pageYOffset;
+  const navbar = document.getElementById('navbar');
+  const bg = 'bg-white';
+  const originalbg = 'md:bg-transparent';
+  const borderW = 'md:border-b';
+  const borderCol = 'border-zinc-400';
+  if((document.body.scrollTop >= 50 || document.documentElement.scrollTop >= 50) && window.innerWidth > 640) {
+    if(navbar && navbar.classList.contains(originalbg)) {
+      navbar.classList.add(bg);
+      navbar.classList.add(borderW);
+      navbar.classList.add(borderCol);
+      navbar.classList.remove(originalbg);
+    }
+  } else if(window.innerWidth > 640) {
+    if(navbar && navbar.classList.contains(bg)) {
+      navbar.classList.remove(bg);
+      navbar.classList.remove(borderW);
+      navbar.classList.remove(borderCol);
+      navbar.classList.add(originalbg);
     }
   }
 }
