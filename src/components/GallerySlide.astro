@@ -1,8 +1,10 @@
 ---
+import { Image, Picture } from '@astrojs/image/components';
 const { image, project, text } = Astro.props;
 ---
 
-<li class:list={["relative flex h-full grow-1 shrink-0 basis-full bg-green-700 slide", image]}>
+<li class:list={["relative flex h-full grow-1 shrink-0 basis-full bg-black slide"]}>
+  <Picture src={image} widths={[200, 400, 800]} aspectRatio="16:9" format="avif" alt="Image" />
   <div class="absolute bottom-0 flex flex-col gap-4">
     <div class="px-2 bg-gray-800 bg-opacity-90 text-white">
       {project}

@@ -6,26 +6,15 @@ const { classlist = "" } = Astro.props;
 ---
 
 <div class:list={["relative aspect-video w-full md:w-[500px] lg:w-[550px] xl:w-[750px] rounded-lg shadow-lg", classlist]}>
-  <button id="gallery-left-button" class="absolute top-48 left-0 z-10 p-2 rounded-tr-full rounded-br-full bg-gray-900 bg-opacity-60">
+  <button aria-label="Left Button" id="gallery-left-button" class="absolute top-48 left-0 z-10 px-2 py-4 rounded-tr-full rounded-br-full bg-lightacc bg-opacity-60 transition duration-100 hover:bg-opacity-100">
     <Icon name="mdi:arrow-u-left-top-bold" class="w-6 text-white"></Icon>  
   </button>
-  <button id="gallery-right-button" class="absolute top-48 right-0 z-10 p-2 rounded-tl-full rounded-bl-full bg-gray-900 bg-opacity-60">
+  <button aria-label="Right Button" id="gallery-right-button" class="absolute top-48 right-0 z-10 px-2 py-4 rounded-tl-full rounded-bl-full bg-lightacc bg-opacity-60 transition duration-100 hover:bg-opacity-100">
     <Icon name="mdi:arrow-u-right-top-bold" class="w-6 text-white"></Icon> 
   </button>
-  <div class="w-full h-6 bg-gray-100 rounded-t-lg"></div>
+  <div class="w-full h-6 bg-gray-300 rounded-t-lg"></div>
   <ul id="gallery" class="flex aspect-video h-full w-full bg-gray-300 rounded-b-lg overflow-x-hidden scroll-smooth">
-    <GallerySlide class:list={["slides"]} project="Test" image="bg-[url(./images/tala.png)]">
-      We have never been to Asia, nor have we visited Africa.
-      The worst thing about being at the top of the career ladder is that there's a long way to fall.
-    </GallerySlide>
-    <GallerySlide project="Test" image="bg-green-800">
-      We have never been to Asia, nor have we visited Africa.
-      The worst thing about being at the top of the career ladder is that there's a long way to fall.
-    </GallerySlide>
-    <GallerySlide project="Test" image="bg-[url(./images/tala.png)]">
-      We have never been to Asia, nor have we visited Africa.
-      The worst thing about being at the top of the career ladder is that there's a long way to fall.
-    </GallerySlide>
+    <slot />
   </ul>
   
 </div>

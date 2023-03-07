@@ -1,7 +1,8 @@
 ---
 // Comments
 import "../styles/global.css";
-import { Icon } from 'astro-icon'
+import Logo from '../components/Logo.astro';
+import { Icon } from 'astro-icon';
 
 const { border = 'border-b'} = Astro.props;
 
@@ -15,10 +16,10 @@ const navLinks: { label: string, href: string} [] = [
 
 ---
 
-<nav id="navbar" class="fixed top-0 z-50 transition-all border-b md:border-0 bg-white md:bg-transparent transform ease-in duration-200 w-full min-h-16 md:min-h-0 py-4 px-4">
+<nav id="navbar" class="fixed top-0 z-50 transition-all border-b md:border-0 bg-light md:bg-transparent transform ease-in duration-200 w-full min-h-16 md:min-h-0 py-4 px-4">
   <div class="container mx-auto flex flex-col md:flex-row justify-between items-center">
     <div class="flex xl:w-full flex-row justify-between gap-4 shrink">
-      <div class="font-[Sentient] text-4xl md:text-5xl"><strong>michael<span class="text-[#083d77]">v</span></strong></div>
+      <Logo />
       <div class="flex flex-row">
         <Icon name="mdi:weather-night" class="w-6 md:hidden"/>
         <Icon id="mobile-menu" name="mdi:menu" class="w-6 md:hidden cursor-pointer"/>
@@ -27,7 +28,7 @@ const navLinks: { label: string, href: string} [] = [
     <ul id="mobile-nav" class="hidden flex md:opacity-100 md:flex flex-col gap-4 md:flex-row lg:basis-1/2 lg:shrink font-regular items-start justify-around uppercase">
       {
         navLinks.map(({label, href }) => (
-        <li><a href={href} class="hover:text-blue-800">{label}</a></li>
+        <li><a href={href} class="text-dark hover:text-blue-800">{label}</a></li>
         ))
       }
     </ul>
@@ -63,7 +64,7 @@ function enableMenu() {
 window.onscroll = function (event) {
   const scroll = window.pageYOffset;
   const navbar = document.getElementById('navbar');
-  const bg = 'bg-white';
+  const bg = 'bg-light';
   const originalbg = 'md:bg-transparent';
   const borderW = 'md:border-b';
   const borderCol = 'border-zinc-400';
@@ -80,6 +81,14 @@ window.onscroll = function (event) {
       navbar.classList.remove(borderW);
       navbar.classList.remove(borderCol);
       navbar.classList.add(originalbg);
+    }
+  }
+  else {
+    if(navbar) {
+      navbar.classList.add(bg);
+      navbar.classList.add(borderW);
+      navbar.classList.add(borderCol);
+      navbar.classList.remove(originalbg);
     }
   }
 }

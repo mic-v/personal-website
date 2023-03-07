@@ -5,9 +5,17 @@ module.exports = {
 		fontFamily: {
 			sans: [
 				"Golos Text, sans-serif",
-			],
-		extend: {},
+			]
 		},
+		extend: {
+			colors: {
+				main: '#A16BA0',
+				darkacc: '#006DAA',
+				lightacc: '#DB9D47',
+				light: '#f0f0f0',
+				dark: '#182825',
+			}, 
+		}
 	},
 	plugins: [],
 };
