@@ -35,7 +35,7 @@ const socialLinks: { label: string, href: string, icon: string } [] = [
               navLinks.map(({label, href, icon }) => (
               <li>
                 <div class="flex flex-row gap-4">
-                  <Icon name={icon} class="w-4" />
+                  <Icon name={icon} class="w-4 transition-all hover:animate-spin" />
                   <a href={href} class="underline-offset-4 hover:underline">{label}</a>
                 </div>
               </li>
@@ -50,7 +50,7 @@ const socialLinks: { label: string, href: string, icon: string } [] = [
               socialLinks.map(( {label, href, icon }) => (
                 <li>
                   <div class="flex flex-row gap-4">
-                    <Icon name={icon} class="w-4" />
+                    <Icon name={icon} class="w-4 transition-all hover:animate-spin" />
                     <a href={href} target="_blank" class="underline-offset-4 hover:underline">{label}</a>
                   </div>
                 </li>

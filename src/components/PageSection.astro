@@ -1,20 +1,14 @@
 ---
-const { title, flexwrap = "md:flex-row", classlist = ""} = Astro.props;
+const { title, flexlist="flex flex-col justify-between items-center md:flex-row md:items-start gap-8", classlist = ""} = Astro.props;
 ---
 <section class:list={["", classlist]}>
-  <div class="container h-auto xl:w-[1500px] m-auto py-32 md:px-4 lg:px-10 md:py-32">
-    <div class:list={['h-auto flex flex-col justify-between items-center gap-4 md:items-start', flexwrap]}>
-      <div class:list={["w-full h-auto flex flex-col content-stretch justify-between gap-8 items-center", (flexwrap == "md:flex-row" ? "md:items-start" : "md:items-end")]}>
-        <h1 class="font-bold text-center items-center md:text-start text-dark text-5xl lg:text-6xl xl:text-7xl uppercase">
-          { title }
-        </h1>
-        <slot name="subtext" class="text-2xl px-2">
-          <p>Need to include subtext here!</p>
-        </slot>
-      </div>
-      <div class="flex flex-col gap-8 w-full">
-        <slot name="otherside"></slot>
-      </div>
+  <div class="container h-auto xl:w-[1500px] m-auto py-32 md:px-4 lg:px-0 md:py-32">
+    <div class:list={['h-auto', flexlist]}>
+      <slot name="subtext">
+        <p>Need to include subtext here!</p>
+      </slot>
+      <slot name="otherside"></slot>
+      <slot />
     </div>
   </div>
 </section>

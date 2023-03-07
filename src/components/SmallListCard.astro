@@ -1,12 +1,12 @@
 ---
 import { Icon } from 'astro-icon'
-const { icon, bgcolor = "bg-blue-600" } = Astro.props;
+const { icon, bgcolor = "bg-blue-600", textcolor = "text-white" } = Astro.props;
 ---
 
 
 <div class:list= {["w-[24rem] md:w-[20rem] xl:w-[32rem] py-4 px-4 rounded-md flex flex-row items-center gap-4 transform duration-200 hover:-translate-x-6", bgcolor]}>
   <Icon name={icon} class="aspect-square max-w-[4rem] text-white"></Icon>
-  <div class="text-white">
+  <div class:list= {["text-lg",textcolor]}>
     <slot name="text">
 
     </slot>

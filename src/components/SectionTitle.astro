@@ -1,0 +1,7 @@
+---
+const { title = "", classlist = "" } = Astro.props;
+---
+
+<h1 class:list={["font-bold text-dark text-5xl lg:text-6xl xl:text-7xl uppercase", classlist]}>
+  { title }
+</h1>
