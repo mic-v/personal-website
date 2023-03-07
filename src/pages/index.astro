@@ -22,7 +22,7 @@ import avatar from '/public/images/avatar.png';
 			<p slot="hero-header">Hey there,<br> I'm Michael!</p>
 			<p slot="hero-text">I am Michael Victorino. I like to program and interested in web development, game development, etc.</p>\
 			<div slot="hero-image" class="p-2 md:p-8 bg-main rotate-45">
-				<Picture class="-rotate-45" src={avatar} widths={[200, 400, 800]} format="avif" aspectRatio="1:1" sizes="200px" alt="Personal avater of myself" />
+				<Picture class="-rotate-45 aspect-square" src={avatar} widths={[200, 400, 800]} format="avif" aspectRatio="1:1" sizes="(max-width: 640px) 100px, (max-width: 768px) 150px, (max-width: 1024px) 250px, (max-width: 1280px) 200px, (min-width: 1281px) 200px" alt="Personal avater of myself" />
 			</div>
 		</Hero>
 	</GridSection>
@@ -47,8 +47,8 @@ import avatar from '/public/images/avatar.png';
 			</FlexColList>	
 		</div>
 		<div slot="otherside" class="flex flex-col gap-4 items-center">
-			<div class="aspect-[4/3] w-[400px] md:w-[350px] lg:w-[450px] xl:w-[550px] bg-gray-200 rounded-sm shadow-lg transform transition-all ease-out hover:scale-[85%] hover:rotate-2">
-				<Picture class="hue-rotate-45 sepia-[.5]"  src="/public/images/aboutme.jpg" widths={[200, 400, 800]} format="avif" aspectRatio="4:3" sizes="100%" alt="A picture of myself" />
+			<div class="aspect-[4/3] w-[400px] md:w-[350px] lg:w-[450px] xl:w-[550px] transform transition-all ease-out hover:scale-[85%] hover:rotate-2">
+				<Picture class="hue-rotate-45 sepia-[.5] rounded-md shadow-lg shadow-gray-400"  src="/public/images/aboutme.jpg" widths={[200, 400, 800]} format="avif" aspectRatio="4:3" sizes="100%" alt="A picture of myself" />
 			</div>
 			<a href="/about"><Button>Learn more about me!</Button></a>
 		</div>
@@ -62,13 +62,13 @@ import avatar from '/public/images/avatar.png';
 		</FlexColList>
 		<div slot="otherside" class="flex basis-1/2 items-stretch px-6">
 			<Gallery>
-				<GallerySlide class:list={["slides"]} project="Event Organizer" image="./images/tala.png">
+				<GallerySlide class:list={["slides"]} project="Event Organizer" image="/public/images/tala.png">
 					A website for an event organizer/advertiser specifically music, highlighting artists and events
 				</GallerySlide>
-				<GallerySlide project="To-Do List" image="./images/todolist.png">
+				<GallerySlide project="To-Do List" image="/public/images/todolist.png">
 					A Todo List web application that utilises local storage of the browser which allows you to organise tasks/projects you need to finish
 				</GallerySlide>
-				<GallerySlide project="Tic Tac Toe" image="./images/tictactoe.png">
+				<GallerySlide project="Tic Tac Toe" image="/public/images/tictactoe.png">
 					Play Tic-Tac-Toe against the computer. The computer uses the minimax algorithm which means the player has no chance to win!
 				</GallerySlide>
 			</Gallery>
