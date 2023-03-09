@@ -10,10 +10,10 @@ import { Picture } from '@astrojs/image/components';
 import avatar from '/public/images/avatar.png';
 
 const skills: { label: string, list: string []} [] = [
-  { label: 'Languages', list: ['test', 'test'] },
-  { label: 'Libraries', list: ['test', 'test'] },
-  { label: 'Frameworks', list: ['test', 'test'] },
-  { label: 'Tools', list: ['test', 'test'] },
+  { label: 'Languages', list: ['HTML', 'CSS', 'Javascript/Typescript', 'C++', 'Java'] },
+  { label: 'Libraries', list: ['SDL2', 'GLFW'] },
+  { label: 'Frameworks', list: ['TailwindCSS', 'Cocos2d-X'] },
+  { label: 'Tools', list: ['GIT', 'Npm', 'VSCode', 'Linux Terminal', 'Visual Studio'] },
 ];
 
 ---
@@ -37,13 +37,21 @@ const skills: { label: string, list: string []} [] = [
     </div>
   </PageSection>
   
-  <PageSection title="Technical Knowledge" flexlist="flex flex-col items-baseline gap-8"> 
-    <SectionTitle title="Skills" classlist=""/>
-    <div class="grid grids-row-1 grids-col-4 gap-4 w-full">
+  <PageSection title="Technical Knowledge" flexlist="flex flex-col gap-8"> 
+    <SectionTitle title="Skills" classlist="self-center lg:self-start"/>
+    <div class="w-4/5 mx-auto lg:w-full grid grids-rows-4 lg:grid-cols-4 gap-4 text-xl">
         {
           skills.map(({label, list }) => (
-          <div class="rounded-md bg-main">
+          <div class="rounded-md bg-main text-white py-4 px-2 flex flex-col gap-2">
             <span>{label}</span>
+            <hr>
+            <ul class="flex flex-col gap-8 px-4 list-disc">
+              {
+                list.map(item => (
+                  <li class="uppercase text-light">{item}</li>
+                ))
+              }
+            </ul>
           </div>
           ))
         }
