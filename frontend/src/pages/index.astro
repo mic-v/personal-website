@@ -23,7 +23,7 @@ import SectionTitle from '../components/SectionTitle.astro';
 	<Hero subtext="I am Michael Victorino. I am a web developer">
 		<p slot="hero-header">Hey there,<br> I'm Michael!</p>
 		<p slot="hero-text" class="text-xl lg:text-2xl">I am Michael Victorino. I like to program and interested in web development, game development, etc.</p>\
-		<div slot="hero-image" class="bg-main hover:rotate-[5deg] transition-all duration-100">
+		<div slot="hero-image" class="bg-main p-2 hover:rotate-[5deg] rounded-l-3xl transition-all duration-100">
 			<Picture class="aspect-square" src={avatar} widths={[200, 400, 800]} format="avif" aspectRatio="1:1" width={200} sizes="(max-width: 640px) 100px, (max-width: 768px) 150px, (max-width: 1024px) 250px, (max-width: 1280px) 200px, (min-width: 1281px) 200px" alt="Personal avater of myself" />
 		</div>
 	</Hero>
