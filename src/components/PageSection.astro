@@ -1,14 +1,13 @@
 ---
-const { title, flexlist="flex flex-col justify-between items-center md:flex-row md:items-start gap-8", classlist = ""} = Astro.props;
+const { flexlist="flex flex-col justify-between items-center md:flex-row md:items-start gap-8", classlist = ""} = Astro.props;
 ---
 <section class:list={["", classlist]}>
   <div class="container h-auto xl:w-[1500px] m-auto py-32 md:px-4 lg:px-0 md:py-32">
     <div class:list={['h-auto', flexlist]}>
+      <slot />
       <slot name="subtext">
-        <p>Need to include subtext here!</p>
       </slot>
       <slot name="otherside"></slot>
-      <slot />
     </div>
   </div>
 </section>

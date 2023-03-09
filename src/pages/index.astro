@@ -23,14 +23,14 @@ import SectionTitle from '../components/SectionTitle.astro';
 	<Hero subtext="I am Michael Victorino. I am a web developer">
 		<p slot="hero-header">Hey there,<br> I'm Michael!</p>
 		<p slot="hero-text" class="text-xl lg:text-2xl">I am Michael Victorino. I like to program and interested in web development, game development, etc.</p>\
-		<div slot="hero-image" class="bg-main rotate-45 hover:rotate-[50deg] transition-all duration-100">
-			<Picture class="-rotate-45 aspect-square" src={avatar} widths={[200, 400, 800]} format="avif" aspectRatio="1:1" sizes="(max-width: 640px) 100px, (max-width: 768px) 150px, (max-width: 1024px) 250px, (max-width: 1280px) 200px, (min-width: 1281px) 200px" alt="Personal avater of myself" />
+		<div slot="hero-image" class="bg-main hover:rotate-[5deg] transition-all duration-100">
+			<Picture class="aspect-square" src={avatar} widths={[200, 400, 800]} format="avif" aspectRatio="1:1" width={200} sizes="(max-width: 640px) 100px, (max-width: 768px) 150px, (max-width: 1024px) 250px, (max-width: 1280px) 200px, (min-width: 1281px) 200px" alt="Personal avater of myself" />
 		</div>
 	</Hero>
-	<PageSection title="About me" flexlist="flex flex-col justify-between items-center md:flex-row-reverse md:items-start gap-8" classlist="z-50">
-		<FlexColList classlist="gap-4 items-center md:items-end" slot="subtext">
-			<li><SectionTitle title="About me" classlist="" /></li>
-			<li><strong class="text-xl text-main">Web Developer | Game Developer | Programmer</strong> </li>
+	<PageSection title="About me" flexlist="flex flex-col justify-between items-center lg:flex-row-reverse md:items-start gap-8" classlist="z-50">
+		<FlexColList classlist="xl:basis-1/2 gap-4 items-stretch" slot="subtext">
+			<li class="self-center lg:self-end"><SectionTitle title="About me" classlist="" /></li>
+			<li class="self-center lg:self-end"><strong class="text-lg xl:text-xl text-main">Web Developer | Game Developer | Programmer</strong> </li>
 			<li>
 				<SmallListCard icon="mdi:account-supervisor-circle-outline" bgcolor="bg-darkacc">
 					<div slot="text">I'm Michael, currently based in Toronto, Canada</div>
@@ -38,7 +38,7 @@ import SectionTitle from '../components/SectionTitle.astro';
 			</li>
 			<li>
 				<SmallListCard icon="ic:round-history-edu" bgcolor="bg-lightacc">
-					<div slot="text">Started programming in high school from web development and game development</div>
+					<div slot="text" class="text-black">Started programming in high school from web development and game development</div>
 				</SmallListCard>
 			</li>
 			<li>
@@ -47,11 +47,11 @@ import SectionTitle from '../components/SectionTitle.astro';
 				</SmallListCard>
 			</li>
 		</FlexColList>	
-		<div slot="otherside" class="flex flex-col gap-4 items-center">
-			<div class="aspect-[4/3] w-[400px] md:w-[350px] lg:w-[450px] xl:w-[550px] transform transition-all ease-out hover:scale-[85%] hover:rotate-2">
-				<Picture class="saturate-150 contrast-75 rounded-md shadow-lg shadow-gray-400 backdrop-grayscale"  src="/public/images/aboutme.jpg" widths={[200, 400, 800]} format="avif" aspectRatio="4:3" sizes="100%" alt="A picture of myself" />
+		<div slot="otherside" class="self-center shrink w-3/5 xl:basis-1/2 flex flex-col gap-4 items-center lg:items-start">
+			<div class="self-center aspect-video w-full lg:w-[550px] xl:w-[650px] transform transition-all ease-out hover:scale-[85%] hover:rotate-2">
+				<Picture class="saturate-150 contrast-75 rounded-md shadow-lg shadow-gray-400 backdrop-grayscale"  src="./public/images/aboutme.jpg" widths={[800, 1000, 1200]} format="avif" aspectRatio="4:3" sizes="100%" alt="A picture of myself" />
 			</div>
-			<a href="/about"><Button>Learn more about me!</Button></a>
+			<a href="/about" class="self-center"><Button>Learn more about me!</Button></a>
 		</div>
 	</PageSection>
 
@@ -64,13 +64,13 @@ import SectionTitle from '../components/SectionTitle.astro';
 		</FlexColList>
 		<div slot="otherside" class="flex basis-1/2 items-stretch px-6">
 			<Gallery>
-				<GallerySlide class:list={["slides"]} project="Event Organizer" image="/public/images/tala.png">
+				<GallerySlide class:list={["slides"]} project="Event Organizer" image="./public/images/tala.png">
 					A website for an event organizer/advertiser specifically music, highlighting artists and events
 				</GallerySlide>
-				<GallerySlide project="To-Do List" image="/public/images/todolist.png">
+				<GallerySlide project="To-Do List" image="./public/images/todolist.png">
 					A Todo List web application that utilises local storage of the browser which allows you to organise tasks/projects you need to finish
 				</GallerySlide>
-				<GallerySlide project="Tic Tac Toe" image="/public/images/tictactoe.png">
+				<GallerySlide project="Tic Tac Toe" image="./public/images/tictactoe.png">
 					Play Tic-Tac-Toe against the computer. The computer uses the minimax algorithm which means the player has no chance to win!
 				</GallerySlide>
 			</Gallery>

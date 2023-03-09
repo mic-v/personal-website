@@ -5,24 +5,49 @@ import Footer from "../components/Footer.astro";
 import GridSection from "../components/GridSection.astro";
 import Hero from "../components/Hero.astro";
 import PageSection from "../components/PageSection.astro";
+import SectionTitle from "../components/SectionTitle.astro";
+import { Picture } from '@astrojs/image/components';
+import avatar from '/public/images/avatar.png';
+
+const skills: { label: string, list: string []} [] = [
+  { label: 'Languages', list: ['test', 'test'] },
+  { label: 'Libraries', list: ['test', 'test'] },
+  { label: 'Frameworks', list: ['test', 'test'] },
+  { label: 'Tools', list: ['test', 'test'] },
+];
+
 ---
 
 <MainLayout title="About">
   <Navigation />
   <GridSection>
-		<Hero>
-			<p slot="hero-header">About Me</p>
-			<p slot="hero-text"></p>
-		</Hero>
   </GridSection>
-  <PageSection title="Who I am" flexlist="flex flex-col justify-center mb-32 items-stretch md:flex-col"> 
-    <div slot="subtext" class="text-white">
-      Hello
+  <PageSection flexlist="w-full xl:w-[1000px] mx-auto mt-12 flex flex-col justify-center items-center lg:items-stretch md:flex-col gap-8">
+    <SectionTitle title="Who I am" classlist="self-center lg:self-start"/>
+    <div class="flex flex-col lg:flex-row basis-1/3 items-center lg:items-stretch gap-8">
+      <Picture class="aspect-square" src={avatar} widths={[200, 400, 800]} format="avif" aspectRatio="1:1" width={200} sizes="(max-width: 640px) 100px, (max-width: 768px) 150px, (max-width: 1024px) 250px, (max-width: 1280px) 200px, (min-width: 1281px) 200px" alt="Personal avater of myself" />
+      <div class="text-xl lg:text-2xl basis-2/3 bg-dark bg-opacity-20 p-4 grow">
+        <div class="">Hello I am Michael Victorino based in Toronto,Canada . I am a Computer Science graduate from York University,
+          and a self-taught Front-End Developer.
+        </div>
+        <div>
+          Currently, I am building websites focused on responsiveness, accessability, and amazing visuals.
+        </div>
+      </div>
     </div>
-    <div class="">omg we are testing this</div>
   </PageSection>
-  <PageSection title="Technical Knowledge"> 
-    Test
+  
+  <PageSection title="Technical Knowledge" flexlist="flex flex-col items-baseline gap-8"> 
+    <SectionTitle title="Skills" classlist=""/>
+    <div class="grid grids-row-1 grids-col-4 gap-4 w-full">
+        {
+          skills.map(({label, list }) => (
+          <div class="rounded-md bg-main">
+            <span>{label}</span>
+          </div>
+          ))
+        }
+    </div>
   </PageSection>
   <Footer />
 </MainLayout>
