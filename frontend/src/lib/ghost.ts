@@ -1,3 +1,4 @@
+// @ts-ignore
 import GhostContentAPI from '@tryghost/content-api';
 
 // Create API instance with site credentials
