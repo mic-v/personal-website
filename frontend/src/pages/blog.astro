@@ -6,7 +6,6 @@ import GridSection from "../components/GridSection.astro";
 import Hero from "../components/Hero.astro";
 import PageSection from "../components/PageSection.astro";
 
-/*
 import { ghostClient } from '../lib/ghost';
 const posts = await ghostClient.posts
     .browse({
@@ -15,7 +14,6 @@ const posts = await ghostClient.posts
     .catch((err) => {
         console.error(err);
     });
-*/
 ---
 
 <MainLayout title="Blog">
@@ -28,7 +26,6 @@ const posts = await ghostClient.posts
   </GridSection>
   <PageSection title="All Blogs" flexlist="grid lg:grid-cols-4 gap-4"> 
     {
-      /*
       posts.map((post) => (
           <a href={`/blog/${post.slug}`}>
             <div class="flex flex-col bg-main">
@@ -37,7 +34,7 @@ const posts = await ghostClient.posts
               <span>Read More</span>
             </div>
           </a>
-      )) */
+      ))
     }
   </PageSection>
   <Footer />
