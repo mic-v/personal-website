@@ -5,27 +5,38 @@ import Footer from "../components/Footer.astro";
 import GridSection from "../components/GridSection.astro";
 import Hero from "../components/Hero.astro";
 import PageSection from "../components/PageSection.astro";
+
+import { ghostClient } from '../lib/ghost';
+const posts = await ghostClient.posts
+    .browse({
+        limit: 'all',
+    })
+    .catch((err) => {
+        console.error(err);
+    });
+
 ---
 
 <MainLayout title="Blog">
   <Navigation />
   <GridSection>
 		<Hero>
-			<p slot="hero-header">Blog</p>
-			<p slot="hero-text"></p>
+			<p slot="hero-header">Blog Posts</p>
+			<p slot="hero-text">Still under construction</p>
 		</Hero>
   </GridSection>
-  <PageSection title="Recent Blogs"> 
-    Test
-  </PageSection>
-  <PageSection title="Programming Blogs"> 
-    Test
-  </PageSection>
-  <PageSection title="Reviews"> 
-    Test
-  </PageSection>
-  <PageSection title="Misc"> 
-    Test
+  <PageSection title="All Blogs" flexlist="grid lg:grid-cols-4 gap-4"> 
+    {
+      posts.map((post) => (
+          <a href={`/blog/${post.slug}`}>
+            <div class="flex flex-col bg-main">
+              <h1> {post.title} </h1>
+              <p class="truncate max-w-[200px]"> {post.excerpt} </p>
+              <span>Read More</span>
+            </div>
+          </a>
+      ))
+    }
   </PageSection>
   <Footer />
 </MainLayout>
