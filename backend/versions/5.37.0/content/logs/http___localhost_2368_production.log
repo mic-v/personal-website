@@ -1,9 +1,0 @@
-{"name":"Log","hostname":"pop-os","pid":5294,"level":30,"version":"5.37.0","msg":"Ghost is running in production...","time":"2023-03-10T19:43:37.489Z","v":0}
-{"name":"Log","hostname":"pop-os","pid":5294,"level":30,"version":"5.37.0","msg":"Your site is now available on http://localhost:2368/","time":"2023-03-10T19:43:37.490Z","v":0}
-{"name":"Log","hostname":"pop-os","pid":5294,"level":30,"version":"5.37.0","msg":"Ctrl+C to shut down","time":"2023-03-10T19:43:37.490Z","v":0}
-{"name":"Log","hostname":"pop-os","pid":5294,"level":30,"version":"5.37.0","msg":"Ghost server started in 0.951s","time":"2023-03-10T19:43:37.491Z","v":0}
-{"name":"Log","hostname":"pop-os","pid":5294,"level":50,"version":"5.37.0","err":{"id":500,"domain":"http://localhost:2368","code":"ECONNREFUSED","name":"DatabaseError","statusCode":500,"level":"critical","message":"connect ECONNREFUSED 127.0.0.1:3306","help":"\"Unknown database error\"","stack":"Error: connect ECONNREFUSED 127.0.0.1:3306\n    at /home/micv/Documents/personal-website/backend/versions/5.37.0/node_modules/knex-migrator/lib/database.js:57:19\n    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1494:16)","hideStack":false},"msg":"connect ECONNREFUSED 127.0.0.1:3306","time":"2023-03-10T19:43:37.723Z","v":0}
-{"name":"Log","hostname":"pop-os","pid":5294,"level":40,"version":"5.37.0","msg":"Ghost is shutting down","time":"2023-03-10T19:43:37.724Z","v":0}
-{"name":"Log","hostname":"pop-os","pid":5294,"level":40,"version":"5.37.0","msg":"Ghost has shut down","time":"2023-03-10T19:43:37.725Z","v":0}
-{"name":"Log","hostname":"pop-os","pid":5294,"level":40,"version":"5.37.0","msg":"Your site is now offline","time":"2023-03-10T19:43:37.726Z","v":0}
-{"name":"Log","hostname":"pop-os","pid":5294,"level":40,"version":"5.37.0","msg":"Ghost was running for a few seconds","time":"2023-03-10T19:43:37.727Z","v":0}
