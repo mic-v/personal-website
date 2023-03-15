@@ -26,6 +26,7 @@ const articles = strapiClient.data;
   <PageSection title="All Blogs" flexlist="flex flex-col items-center gap-8"> 
     <SectionTitle title="Recent Blogs" classlist="self-center lg:self-start" />
     <div class="grid justify-center items-center px-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+      <!-- 
       {
         articles.map(({attributes: {title, slug, desc, body}}) => (
           <a href='post/${slug}'>
@@ -45,6 +46,7 @@ const articles = strapiClient.data;
           </a>
         ))
       }
+      -->
     </div>
   </PageSection>
   <Footer />
