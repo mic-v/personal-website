@@ -1,5 +1,7 @@
 /// <reference types="@astrojs/image/client" />
 
 interface ImportMetaEnv {
-  readonly CONTENT_API_KEY: string;
+  readonly STRAPI_API_KEY: string;
+  readonly URL: string;
+  readonly AUTHORIZATION: string;
 }
