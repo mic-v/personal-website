@@ -12,11 +12,41 @@ import PageSection from "../components/PageSection.astro";
   <GridSection>
 		<Hero>
 			<p slot="hero-header">Contact</p>
-			<p slot="hero-text"></p>
+			<p slot="hero-text" class="text-xl lg:text-2xl">Need to contact me for any questions? Need a website up and running?<br>
+      Here are some ways to contact me...</p>
+      <div slot="hero-image" class="bg-main rounded-sm basis-1/4 self-stretch px-4 py-4 hover:rotate-[5deg] transition-all duration-100">
+        <ul class="flex flex-col gap-8 justify-evenly h-full">
+          <li>
+            <h2>Socials</h2>
+            <hr class="bg-white">
+          </li>
+          <li>Twitter</li>
+          <li>LinkedIn</li>
+          <li>Github</li>
+        </ul>
+      </div>
 		</Hero>
   </GridSection>
-  <PageSection title="under construction"> 
-    Test
+  <PageSection flexlist="bg-main p-4 rounded-md"> 
+    <form action="mailto:emailid@example.com" method="post" enctype="text/plain">
+      <ul class="flex flex-col gap-8">
+        <li>
+          <label class="text-white" for="fEmail">Email</label>
+          <input class="w-full rounded-sm py-1 px-4" type="email" name="fEmail" placeholder="example@example.com" required>
+        </li>
+        <li>
+          <label class="text-white" for="fSubject">Subject</label>
+          <input class="w-full rounded-sm py-1 px-4" type="text" name="fSubject" placeholder="Subject" required><br>
+        </li>
+        <li>
+          <label class="text-white" for="fText">Message</label>
+          <textarea class="w-full rounded-sm py-1 px-4" id="text" name="fText" placeholder="Your message here..." rows="10"></textarea>
+        </li>
+        <li>
+          <input class="w-full p-4 bg-darkacc text-white" type="submit" value="Send">
+        </li>
+      </ul> 
+    </form>
   </PageSection>
   <Footer />
 </MainLayout>
