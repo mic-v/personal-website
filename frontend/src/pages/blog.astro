@@ -22,8 +22,27 @@ import SectionTitle from "../components/SectionTitle.astro";
   <PageSection title="All Blogs" flexlist="flex flex-col items-center gap-8"> 
     <SectionTitle title="Recent Blogs" classlist="self-center lg:self-start" />
     <div class="grid justify-center items-center px-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+      <!--
       {
+        articles?.map(({attributes: {title, slug, desc, body}}) => (
+          <a href={'post/${slug}'}>
+            <div class="flex flex-col mx-auto bg-main rounded w-[300px] lg:w-full">
+              <div class="aspect-[4/3] bg-white rounded-sm">
+                <Picture class="" src="./public/images/blog-default.jpg" widths={[200, 400, 800]} aspectRatio="4:3" format="avif" sizes="100%" />
+              </div>
+              <div class="flex flex-col gap-4 p-4">
+                <div>
+                  <h2>{title}</h2>  
+                  <hr>
+                </div>
+                <p class="truncate max-w-[200px]">{desc}</p>
+                <p class="text-yellow-300 underline"> Read more! </p>
+              </div>
+            </div>
+          </a>
+        ))
       }
+      -->
     </div>
   </PageSection>
   <Footer />
