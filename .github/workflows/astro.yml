@@ -68,7 +68,8 @@ jobs:
         env:
           CLIENT_ID: ${{ secrets.TINA_PUBLIC_CLIENT_ID }}
           TINA_TOKEN: ${{ secrets.TINA_TOKEN }}
-        run: ${{ steps.detect-package-manager.outputs.manager }} tinacms build
+        run: ${{ steps.detect-package-manager.outputs.runner }} tinacms build
+        working-directory: ${{ env.BUILD_PATH }}
       - name: Build with Astro
         run: |
           ${{ steps.detect-package-manager.outputs.runner }} astro build \
