@@ -5,6 +5,7 @@ import Footer from "../components/Footer.astro";
 import GridSection from "../components/GridSection.astro";
 import Hero from "../components/Hero.astro";
 import PageSection from "../components/PageSection.astro";
+import SectionTitle from "../components/SectionTitle.astro";
 ---
 
 <MainLayout title="Contacts">
@@ -27,25 +28,18 @@ import PageSection from "../components/PageSection.astro";
       </div>
 		</Hero>
   </GridSection>
-  <PageSection flexlist="bg-main p-4 rounded-md"> 
-    <form action="mailto:emailid@example.com" method="post" enctype="text/plain">
-      <ul class="flex flex-col gap-8">
-        <li>
-          <label class="text-white" for="fEmail">Email</label>
-          <input class="w-full rounded-sm py-1 px-4" type="email" name="fEmail" placeholder="example@example.com" required>
-        </li>
-        <li>
-          <label class="text-white" for="fSubject">Subject</label>
-          <input class="w-full rounded-sm py-1 px-4" type="text" name="fSubject" placeholder="Subject" required><br>
-        </li>
-        <li>
-          <label class="text-white" for="fText">Message</label>
-          <textarea class="w-full rounded-sm py-1 px-4" id="text" name="fText" placeholder="Your message here..." rows="10"></textarea>
-        </li>
-        <li>
-          <input class="w-full p-4 bg-darkacc text-white" type="submit" value="Send">
-        </li>
-      </ul> 
+  <PageSection flexlist="flex flex-col items-stretch gap-4 p-4 rounded-md"> 
+    <SectionTitle title="Message Me!" classlist="text-center" />
+    <form class="bg-main lg:self-center lg:w-4/6 p-4" method="post" action="https://formspree.io/f/xnqybagr">
+      <label class="text-white" for="fname">Your Name:</label>
+      <input id="fname" class="w-full rounded-sm py-1 px-4" type="text" name="name" placeholder="John Doe" required>
+      <label class="text-white" for="femail">Your Email:</label>
+      <input id="femail" class="w-full rounded-sm py-1 px-4" type="email" name="email" placeholder="example@example.com" required>
+      <label class="text-white" for="fsubject">Subject:</label>
+      <input id="fsubject" class="w-full rounded-sm py-1 px-4" type="text" name="subject" placeholder="Subject" required><br>
+      <label class="text-white" for="fmessage">Message</label>
+      <textarea id="fmessage" class="w-full rounded-sm py-1 px-4" name="message" placeholder="Your message here..." rows="10" required></textarea>
+      <input class="w-full p-4 bg-darkacc text-white" type="submit" value="Send">
     </form>
   </PageSection>
   <Footer />
