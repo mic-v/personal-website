@@ -28,6 +28,7 @@
 		"tailwindcss": "^3.0.24"
 	},
 	"devDependencies": {
+		"@prismicio/react": "^2.5.2",
 		"@tryghost/content-api": "^1.11.6"
 	}
 }

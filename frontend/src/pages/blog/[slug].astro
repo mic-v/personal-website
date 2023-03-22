@@ -1,0 +1,85 @@
+---
+import { Picture } from '@astrojs/image/components';
+import * as prismicH from '@prismicio/helpers';
+import * as PrismicRichText from '@prismicio/react';
+
+import MainLayout from "../../layouts/MainLayout.astro";
+import Navigation from "../../components/Navigation.astro";
+import Hero from "../../components/Hero.astro";
+import GridSection from "../../components/GridSection.astro";
+import PageSection from "../../components/PageSection.astro";
+import SectionTitle from "../../components/SectionTitle.astro";
+import Footer from "../../components/Footer.astro";
+
+import { getAllBlogPosts } from '../../lib/prismic';
+
+
+export async function getStaticPaths() {
+ const events = await getAllBlogPosts();
+ return events.map((post) => {
+ return { params: { slug: post.uid }, props: { post }};
+  });
+}
+const { id } = Astro.params;
+const { post } = Astro.props;
+
+
+const htmlSerializer = (type, element, content, children) => {
+  if (element.data?.label === 'codespan') {
+    return `<code>${children.join('')}<code/>`
+    }
+    
+    return null
+  }
+  
+const html = prismicH.asHTML(post.data.content, null, htmlSerializer);
+alert(html);
+alert(post.data.content);
+---
+
+
+
+<MainLayout title={post.data.title[0].text}>
+  <Navigation />
+  <GridSection>
+  </GridSection>
+  <PageSection flexlist="flex flex-col items-center gap-8 px-4"> 
+    <SectionTitle title={post.data.title[0].text} classlist="self-center" />
+    <p>Posted at { post.data.date } by Michael</p>
+    <div class="h-[300px]">
+      <Picture class="w-full h-full object-cover" src={post.data.image.url} widths={[2000]} aspectRatio="16:9" format="avif" sizes="50%" alt="Picture of blog post"/>
+    </div>
+    <p>{post.data.excerpt}</p>
+    <hr class="bg-main h-1 w-full">
+    <div id="content" class= "flex flex-col items-start gap-8">
+      <Fragment set:html={html} />
+    </div>
+  </PageSection>
+  <Footer />
+</MainLayout>
+
+<script>
+  let content = document.getElementById('content');
+  if(content) {
+
+    let h2Elements = content.getElementsByTagName('h2');
+    for(const elements of h2Elements) {
+      elements.className = elements.classList + "text-4xl font-bold";
+    }
+
+    let ulElements = content.getElementsByTagName('ul');
+    for(const elements of ulElements) {
+      elements.className = elements.classList + "list-[square]";
+    }
+  }
+</script>
+
+<style>
+  ul {
+    list-style: circle;
+  }
+
+  h2 {
+    font-size: 5em;
+  }
+</style>

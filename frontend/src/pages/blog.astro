@@ -10,11 +10,15 @@ import BlogCard from "../components/BlogCard.astro";
 
 import { getAllBlogPosts } from '../lib/prismic';
 
+import { Picture } from '@astrojs/image/components';
+
+import avatar from "/public/images/blog-default.jpg";
+
 export interface Props {
     event: any
 }
-const { event } = Astro.props;
 const articles = await getAllBlogPosts();
+alert(articles);
 ---
 
 <MainLayout title="Blog">
@@ -22,10 +26,13 @@ const articles = await getAllBlogPosts();
   <GridSection>
 		<Hero>
 			<p slot="hero-header">Blog Posts</p>
-			<p slot="hero-text">Still under construction</p>
+			<p slot="hero-text" class="text-xl lg:text-2xl">Welcome to my blog where you can find posts about me talking about programming, media, life, etc!</p>
+      <div slot="hero-image" class="basis-1/2 bg-lightacc p-2 transition-all duration-100">
+        <Picture class="lg:w-full lg:h-full" src={avatar} widths={[200, 400, 800]} format="avif" aspectRatio="1:1" width={200} sizes="100%" alt="Personal avater of myself" />
+      </div>
 		</Hero>
   </GridSection>
-  <PageSection title="All Blogs" flexlist="flex flex-col items-center gap-8"> 
+  <PageSection flexlist="flex flex-col items-center gap-8"> 
     <SectionTitle title="Recent Blogs" classlist="self-center lg:self-start" />
     <div class="grid justify-center items-center px-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
       {
@@ -38,7 +45,6 @@ const articles = await getAllBlogPosts();
   </PageSection>
   <Footer />
 </MainLayout>
-
 <style>
   hr {
     height: 1px;

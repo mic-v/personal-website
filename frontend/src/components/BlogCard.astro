@@ -3,17 +3,16 @@ export interface Props {
     post: any
 }
 const { post } = Astro.props;
-const id = 'blog/'+post.uid;
+const id = './blog/'+post.uid;
 
 import { Picture } from '@astrojs/image/components';
 
-alert(post);
 ---
 
 <a href={id}>
   <div class="flex flex-col mx-auto bg-main rounded w-[300px] lg:w-full">
     <div class="aspect-[4/3] bg-white rounded-sm">
-      <Picture class="" src="./public/images/blog-default.jpg" widths={[200, 400, 800]} aspectRatio="4:3" format="avif" sizes="100%" alt="Picture of blog post"/>
+      <Picture class="" src={post.data.image.url} widths={[200, 400, 800]} aspectRatio="4:3" format="avif" sizes="100%" alt="Picture of blog post"/>
     </div>
     <div class="flex flex-col gap-4 p-4">
       <div>
