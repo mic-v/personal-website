@@ -19,7 +19,9 @@ const navLinks: { label: string, href: string} [] = [
 <nav id="navbar" class="fixed top-0 z-50 transition-all border-b md:border-0 bg-light md:bg-transparent transform ease-in duration-200 w-full min-h-16 md:min-h-0 py-4 px-4">
   <div class="container mx-auto flex flex-col md:flex-row justify-between items-center">
     <div class="flex xl:w-full flex-row justify-between gap-4 shrink">
-      <Logo />
+      <a href="/">
+        <Logo />
+      </a>
       <div class="flex flex-row">
         <Icon name="mdi:weather-night" class="w-6 md:hidden"/>
         <Icon id="mobile-menu" name="mdi:menu" class="w-6 md:hidden cursor-pointer"/>
@@ -33,7 +35,10 @@ const navLinks: { label: string, href: string} [] = [
       }
     </ul>
     <ul>
-      <li><Icon name="mdi:weather-night" class="w-6 hidden md:block"/></li>
+      <!--
+
+        <li><Icon name="mdi:weather-night" class="w-6 hidden md:block"/></li>
+       -->
     </ul>
   </div>
 </nav>
