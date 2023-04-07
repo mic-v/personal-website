@@ -6,28 +6,43 @@ import GridSection from "../components/GridSection.astro";
 import Hero from "../components/Hero.astro";
 import PageSection from "../components/PageSection.astro";
 import SectionTitle from "../components/SectionTitle.astro";
+
+import { Icon } from 'astro-icon';
+
+const socialLinks: { label: string, href: string, icon: string } [] = [
+  { label: 'LinkedIn', href:'https://www.linkedin.com/in/michael-victorino-3a4a27163/', icon: "line-md:linkedin" },
+  { label: 'Twitter', href:'https://twitter.com/itsmickelback', icon: "mdi:twitter" },
+  { label: 'GitHub', href:'https://github.com/mic-v', icon: "mdi:github" },
+];
 ---
 
 <MainLayout title="Contacts">
   <Navigation />
   <GridSection>
-		<Hero>
-			<p slot="hero-header">Contact</p>
-			<p slot="hero-text" class="text-xl lg:text-2xl">Need to contact me for any questions? Need a website up and running?<br>
-      Here are some ways to contact me...</p>
-      <div slot="hero-image" class="bg-main rounded-sm basis-1/4 self-stretch px-4 py-4 hover:rotate-[5deg] transition-all duration-100">
-        <ul class="flex flex-col gap-8 justify-evenly h-full">
-          <li>
-            <h2>Socials</h2>
-            <hr class="bg-white">
-          </li>
-          <li>Twitter</li>
-          <li>LinkedIn</li>
-          <li>Github</li>
-        </ul>
-      </div>
-		</Hero>
   </GridSection>
+  <Hero>
+    <p slot="hero-header">Contact</p>
+    <p slot="hero-text" class="text-xl lg:text-2xl">Need to contact me for any questions? Need a website up and running?<br>
+    Here are some ways to contact me...</p>
+    <div slot="hero-image" class="bg-main rounded-sm self-stretch px-24 py-4 transition-all duration-100 relative">
+      <ul class="flex flex-col gap-8 items-start justify-evenly h-full text-white">
+        <li>
+          <h2 class="text-dark text-2xl">Socials</h2>
+          <hr class="bg-white">
+        </li>
+        {
+          socialLinks.map(({label, href, icon }) => (
+          <li class="">
+              <div class="flex flex-row gap-4">
+                <Icon name={icon} class="w-4 transition-all hover:animate-spin" />
+                <a href={href} class="underline-offset-4 hover:underline z-50" target="_blank">{label}</a>
+              </div>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </Hero>
   <PageSection flexlist="flex flex-col items-stretch gap-4 p-4 rounded-md"> 
     <SectionTitle title="Message Me!" classlist="text-center" />
     <form class="bg-main lg:self-center lg:w-4/6 p-4" method="post" action="https://formspree.io/f/xnqybagr">
